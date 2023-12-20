@@ -4,6 +4,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap");
 
 /*======================== Default CSS Start =======================*/
+:root {
+	--white: #ffffff;
+	--black: #000000;
+	--primary: #0e3a53;
+	--bg-color: #f4f4f4;
+	--heading-font: "Raleway", sans-serif;
+	--primary-font: "Lato", sans-serif;
+	--input-bg: rgba(212, 211, 211, 0.44);
+}
 * {
 	margin: 0;
 	padding: 0;
@@ -13,18 +22,10 @@ body {
 	width: 100vw;
 	height: 100vh;
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	font-family: "Lato", sans-serif;
-}
-:root {
-	--white: #ffffff;
-	--black: #000000;
-	--primary: #0e3a53;
-	--bg-color: #f4f4f4;
-	--heading-font: "Raleway", sans-serif;
-	--primary-font: "Lato", sans-serif;
-	--input-bg: rgba(212, 211, 211, 0.44);
 }
 /*======================== Default CSS End =======================*/
 
