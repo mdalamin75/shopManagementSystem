@@ -1,0 +1,151 @@
+/*======================== Lato font =======================*/
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
+/*======================== Raleway Font =======================*/
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap");
+
+/*======================== Default CSS Start =======================*/
+:root {
+	--white: #ffffff;
+	--black: #000000;
+	--primary: #0e3a53;
+	--bg-color: #f4f4f4;
+	--heading-font: "Raleway", sans-serif;
+	--primary-font: "Lato", sans-serif;
+	--input-bg: rgba(212, 211, 211, 0.44);
+}
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+	font-size: 14px;
+	font-family: "Lato", sans-serif;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: var(--heading-font);
+}
+p,
+a {
+	font-family: var(--primary-font);
+}
+.myBtn {
+	font-size: 15px !important;
+	color: var(--white);
+	background-color: var(--primary);
+}
+a.actionBtn {
+	background-color: var(--primary);
+	color: var(--white);
+	padding: 5px 15px;
+	border-radius: 5px;
+	font-size: 14px;
+	text-decoration: none;
+}
+a.actionBtn:hover {
+	background-color: #01598b;
+}
+.myBtn:hover {
+	color: var(--white);
+}
+.modal-content {
+	background-color: var(--bg-color);
+}
+form {
+	background-color: var(--bg-color);
+}
+form label {
+	font-size: 16px;
+	font-weight: 500;
+	margin-bottom: 10px;
+}
+form input {
+	padding: 10px;
+	width: 350px;
+	background-color: var(--input-bg);
+	outline: none;
+	border: none;
+	margin-bottom: 20px;
+	border-radius: 5px;
+}
+form input[type="submit"] {
+	color: var(--white);
+	font-size: 17px;
+	font-weight: 500;
+	width: 120px;
+	margin-top: 18px;
+	background-color: var(--primary);
+	font-family: var(--primary-font);
+	text-transform: capitalize;
+	line-height: 150.6%;
+	padding-bottom: 6px;
+	padding-top: 5px;
+}
+/*======================== Default CSS End =======================*/
+
+/*======================== Login Start =======================*/
+#login {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.login_head {
+	font-family: var(--heading-font);
+	text-transform: capitalize;
+	font-size: 30px;
+	font-weight: 600;
+}
+
+.login_img {
+	width: 100%;
+	max-width: 50vh;
+}
+
+/*======================== Login End =======================*/
+/*======================== Dashboard Start =======================*/
+.navbar {
+	color: var(--white);
+	background-color: var(--primary);
+}
+.dashboard_header .nav-link,
+.navbar-brand {
+	color: var(--white);
+}
+.sidebar {
+	height: 100vh;
+	background-color: var(--primary);
+}
+.sidebar .nav-link {
+	color: var(--white);
+	font-family: var(--heading-font);
+	font-weight: 500;
+	border-radius: 5px 0px 0px 5px;
+}
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+	background-color: var(--bg-color);
+	color: black;
+}
+/*======================== Dashboard End =======================*/
+/*======================== Start =======================*/
+/*======================== End =======================*/
+/*======================== Footer Start =======================*/
+footer {
+	color: var(--white);
+	background-color: var(--primary);
+}
+footer p {
+	margin-bottom: 0 !important;
+}
+/*======================== Footer End =======================*/
