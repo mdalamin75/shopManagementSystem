@@ -13,7 +13,7 @@ include "includes/header.php";
         <div class="col-10 pt-5 ps-0 mt-5">
             <main>
             <div class="container">
-            <!--==============================Add Category start here ====================================-->
+            <!--==============================Add company start here ====================================-->
             <?php 
               if (isset($_SESSION["status"]) && $_SESSION["status"] != "") {
                 
@@ -29,7 +29,7 @@ include "includes/header.php";
             <!-- Button trigger modal -->
             <button type="button" class="btn myBtn mb-5" data-bs-toggle="modal" data-bs-target="#exampleModal">
               <i class="fa-solid fa-plus"></i>
-              Add Category
+              Add company
             </button>
 
             <!-- Modal Start-->
@@ -37,35 +37,35 @@ include "includes/header.php";
               <div class="modal-dialog">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Add New Category</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Add New company</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
                   <div class="modal-body">
-                    <form action="category_function.php" method="post">
+                    <form action="company_function.php" method="post">
                       <div class="d-flex flex-column justify-content-center">
-                        <label for="category_name">Category Name</label>
-                        <input type="text" name="category_name" placeholder="Enter Category Name">
-                        <input type="submit" name="add_category" value="Add Category" class="myBtn">
+                        <label for="company_name">Company Name</label>
+                        <input type="text" name="company_name" placeholder="Enter company Name">
+                        <input type="submit" name="add_company" value="Add company" class="myBtn">
                       </div>
                     </form>
                   </div>
                 </div>
               </div>
             </div>
-            <!--==============================Add Category End here ====================================-->
-            <!--==============================View Category start here ====================================-->
+            <!--==============================Add company End here ====================================-->
+            <!--==============================View company start here ====================================-->
               <?php
-                // View Category data
-                $query = "SELECT * FROM category_info";
+                // View company data
+                $query = "SELECT * FROM company_info";
                 $data = mysqli_query($conn, $query);
                 if (mysqli_num_rows($data) > 0) {
                   }
               ?>
-              <table id="category_table" class="table table-light table-striped table-bordered rounded text-center">
+              <table id="company_table" class="table table-light table-striped table-bordered rounded text-center">
                 <thead>
                     <tr>
-                      <th>Category ID</th>
-                      <th>Category Name</th>
+                      <th>company ID</th>
+                      <th>company Name</th>
                       <th>Action</th>
                     </tr>
                 </thead>
@@ -73,38 +73,38 @@ include "includes/header.php";
                     <?php
                     while ($row = mysqli_fetch_assoc($data)) { ?>
                         <tr>
-                            <td class="category_id">
+                            <td class="company_id">
                                 <?php echo $row['id'] ?>
                             </td>
                             <td class="text-capitalize">
-                                <?php echo $row['category_name'] ?>
+                                <?php echo $row['company_name'] ?>
                             </td>
                             <?php echo "<td>
-                                            <a href=\"#\" class=\"actionBtn edit_category\" data-bs-toggle=\"modal\"  >Edit</a> | 
-			                                <a href=\"category_function.php?id=$row[id]\" class=\"actionBtn\" onClick=\"return confirm('Are you sure you want to delete?')\">Delete</a>
+                                            <a href=\"#\" class=\"actionBtn edit_company\" data-bs-toggle=\"modal\">Edit</a> | 
+			                                <a href=\"company_function.php?id=$row[id]\" class=\"actionBtn\" onClick=\"return confirm('Are you sure you want to delete?')\">Delete</a>
                                         </td>"
                                 ?>
                         </tr>
                     <?php } ?>
                 </tbody>
               </table>
-            <!--==============================View Category End here ====================================-->
-            <!--==============================Edit Category start here ====================================-->
+            <!--==============================View company End here ====================================-->
+            <!--==============================Edit company start here ====================================-->
             <!-- Edit Model -->
-            <div class="modal fade" id="editCategory" tabindex="-1"  aria-labelledby="editModalLabel" aria-hidden="true">
+            <div class="modal fade" id="editcompany" tabindex="-1"  aria-labelledby="editModalLabel" aria-hidden="true">
               <div class="modal-dialog">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <h5 class="modal-title" id="editModalLabel">Edit Category</h5>
+                    <h5 class="modal-title" id="editModalLabel">Edit company</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
                   <div class="modal-body">
-                    <form action="category_function.php" method="post">
+                    <form action="company_function.php" method="post">
                       <div class="d-flex flex-column justify-content-center">
                         <input type="hidden" name="update_id" id="update_id">
-                        <label for="category_name">Category Name</label>
-                        <input type="text" name="category_name" id="category_name" class="text-start">
-                        <input type="submit" name="update_category" value="Update" class="myBtn">
+                        <label for="company_name">company Name</label>
+                        <input type="text" name="company_name" id="company_name" class="text-start">
+                        <input type="submit" name="update_company" value="Update" class="myBtn">
                       </div>
                     </form>
                   </div>
@@ -112,7 +112,7 @@ include "includes/header.php";
               </div>
             </div>
             <!-- Modal End-->
-            <!--==============================Edit Category End here ====================================-->
+            <!--==============================Edit company End here ====================================-->
             </main>
         </div>
     </div>

@@ -19,13 +19,13 @@
         </a>
       </li>
       <li>
-        <a href="#" class="nav-link text-white">
+        <a href="company.php" class="nav-link text-white">
           <svg class="bi me-2" width="16" height="16"><use xlink:href="#table"></use></svg>
-          Orders
+          Company
         </a>
       </li>
       <li>
-        <a href="#" class="nav-link text-white">
+        <a href="product.php" class="nav-link text-white">
           <svg class="bi me-2" width="16" height="16"><use xlink:href="#grid"></use></svg>
           Products
         </a>
