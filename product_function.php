@@ -9,7 +9,8 @@ if (isset($_POST["add_product"])) {
     $price = $_POST["price"];
     $quantity = $_POST["quantity"];
     $company = $_POST["company"];
-    $sql = "INSERT INTO product_info(category,product_name,price,quantity,company) values('$category','$product','$price','$quantity','$company')";
+    $date = date('Y-m-d', strtotime($_POST["date"]));
+    $sql = "INSERT INTO product_info(category,product_name,price,quantity,company,date) values('$category','$product','$price','$quantity','$company','$date')";
     $result = mysqli_query($conn, $sql);
     if ($result) {
         $_SESSION['status'] = "Product Add Successfuly";
@@ -18,7 +19,7 @@ if (isset($_POST["add_product"])) {
         $_SESSION['status'] = "Product Add Failed";
         header("location: product.php");
     }
-    }
+}
 
 
 // Edit product Logic
@@ -29,7 +30,8 @@ if (isset($_POST["update_product"])) {
     $price = $_POST["price"];
     $quantity = $_POST["quantity"];
     $company = $_POST["company"];
-    $update_query = "UPDATE product_info SET category='$category', product_name='$product_name', price='$price', quantity='$quantity', company='$company'  WHERE id = '$id'";
+    $date = date('Y-m-d', strtotime($_POST["date"]));
+    $update_query = "UPDATE product_info SET category='$category', product_name='$product_name', price='$price', quantity='$quantity', company='$company', date='$date'  WHERE id = '$id'";
     $update_query_run = mysqli_query($conn, $update_query);
 
     if ($update_query_run) {

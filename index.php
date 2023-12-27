@@ -1,24 +1,8 @@
 <?php
 session_start();
 include "includes/connection.php";
+include "includes/header.php";
 ?>
-
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <!-- Main CSS -->
-    <link rel="stylesheet" href="css/style.css">
-</head>
-
-<body>
     <main>
         <section id="login">
             <div class="login">
@@ -50,6 +34,7 @@ include "includes/connection.php";
                                 $fetch = mysqli_fetch_array($result);
 
                                 $_SESSION["username"] = $username;
+                                $_SESSION["user_role"] = $fetch["user_role"];
                                 $_SESSION["password"] = $fetch["password"];
                                 header("location: dashboard.php");
                             } else {
@@ -62,10 +47,6 @@ include "includes/connection.php";
             </div>
         </section>
     </main>
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
-</body>
-
-</html>
+<?php
+include('includes/footer.php');
+?>

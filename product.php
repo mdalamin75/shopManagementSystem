@@ -26,11 +26,14 @@ include "includes/header.php";
                 unset($_SESSION["status"]);
               }
             ?>
-            <!-- Button trigger modal -->
-            <button type="button" class="btn myBtn mb-5" data-bs-toggle="modal" data-bs-target="#exampleModal">
-              <i class="fa-solid fa-plus"></i>
-              Add Product
-            </button>
+            <div class="d-flex justify-content-between align-items-center mb-5">
+              <h3>Products</h3>
+              <!-- Button trigger modal -->
+              <button type="button" class="btn myBtn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <i class="fa-solid fa-plus"></i>
+                Add Product
+              </button>
+            </div>
 
             <!-- Modal Start-->
             <div class="modal fade" id="exampleModal" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -97,6 +100,10 @@ include "includes/header.php";
                                 ?>
                             </select>
                         </div>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <label for="date">Date</label>
+                            <input type="date" name="date">
+                        </div>
                         <input type="submit" name="add_product" value="Add product" class="myBtn">
                       </div>
                     </form>
@@ -108,6 +115,7 @@ include "includes/header.php";
             <!--==============================View product start here ====================================-->
               <?php
                 // View product data
+
                 $query = "SELECT * FROM product_info";
                 $data = mysqli_query($conn, $query);
                 if (mysqli_num_rows($data) > 0) {
@@ -116,21 +124,23 @@ include "includes/header.php";
               <table id="product_table" class="table table-light table-striped table-bordered rounded text-center">
                 <thead>
                     <tr>
-                      <th>Product ID</th>
-                      <th>Caegory</th>
+                      <th>NO</th>
+                      <th>Category</th>
                       <th>Product Name</th>
                       <th>Price</th>
                       <th>Quantity</th>
                       <th>Company</th>
+                      <th>Date</th>
                       <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php
+                    $i = 1;
                     while ($row = mysqli_fetch_assoc($data)) { ?>
                         <tr>
                             <td class="product_id">
-                                <?php echo $row['id'] ?>
+                                <?php echo $i++ ?>
                             </td>
                             <td class="text-capitalize">
                                 <?php echo $row['category'] ?>
@@ -146,6 +156,9 @@ include "includes/header.php";
                             </td>
                             <td class="text-capitalize">
                                 <?php echo $row['company'] ?>
+                            </td>
+                            <td>
+                                <?php echo $row['date'] ?>
                             </td>
                             <?php echo "<td>
                                             <a href=\"#\" class=\"actionBtn edit_product\" data-bs-toggle=\"modal\"  >Edit</a> | 
@@ -182,7 +195,7 @@ include "includes/header.php";
                                         $option = $optionData['category_name'];
                                         $id = $optionData['id'];
                                         ?>
-                                        <option value="' . $option['value'] . '" data-selected="' . $option['selected'] . '">
+                                        <option value="<?php echo $option ?>">
                                             <?php echo $option; ?>
                                         </option>
                                         <?php
@@ -223,6 +236,10 @@ include "includes/header.php";
                                 }
                                 ?>
                             </select>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <label for="date">date</label>
+                            <input type="date" name="date" id="date">
                         </div>
                         <input type="submit" name="update_product" value="Update" class="myBtn">
                       </div>

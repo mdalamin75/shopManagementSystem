@@ -21,7 +21,7 @@
 body {
 	width: 100vw;
 	height: 100vh;
-	overflow: hidden;
+	overflow-x: hidden;
 	font-size: 14px;
 	font-family: "Lato", sans-serif;
 }
@@ -98,6 +98,16 @@ select{
     outline: none;
     text-transform: capitalize;
 }
+th{
+	color: var(--white);
+	background-color: var(--primary) !important;
+}
+.page-item.active .page-link {
+    z-index: 3;
+    color: var(--white);
+    background-color: var(--primary);
+    border-color: var(--primary);
+}
 /*======================== Default CSS End =======================*/
 
 /*======================== Login Start =======================*/
@@ -120,35 +130,73 @@ select{
 	width: 100%;
 	max-width: 50vh;
 }
-
 /*======================== Login End =======================*/
-/*======================== Dashboard Start =======================*/
+/*======================== Logout Start =======================*/
+a.logout {
+    text-decoration: none;
+    color: var(--white);
+	border: 1px solid var(--white);
+	padding: 5px 30px;
+	border-radius: 5px;
+}
+a.logout:hover{
+	color: var(--primary);
+	background-color: var(--white);
+	transform: scale(1.5);
+	transition: all 0.4s;
+}
+/*======================== Logout End =======================*/
+/*======================== sidebar Start =======================*/
 .navbar {
 	color: var(--white);
 	background-color: var(--primary);
 }
-.dashboard_header .nav-link,
+.sidebar_header .nav-link,
 .navbar-brand {
 	color: var(--white);
 }
+.active {
+	font-weight: bold !important;
+	color: var(--primary) !important;
+	background-color: var(--white);
+  }
 .sidebar {
-	height: 100vh;
-	background-color: var(--primary);
+    background-color: var(--primary);
+    min-height: 100vh;
+    max-height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
 }
 .sidebar .nav-link {
 	color: var(--white);
 	font-family: var(--heading-font);
 	font-weight: 500;
-	border-radius: 5px 0px 0px 5px;
+	border-radius: 5px;
 }
 .nav-pills .nav-link.active,
 .nav-pills .show > .nav-link {
 	background-color: var(--bg-color);
 	color: black;
+	border-radius: 5px;
 }
 /*======================== Dashboard End =======================*/
-/*======================== Start =======================*/
-/*======================== End =======================*/
+/*======================== Dashboard Start =======================*/
+.category_card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary);
+    height: 88%;
+    margin: 5px;
+    width: 90%;
+}
+.category_card i {
+    font-size: 40px;
+	color: var(--white);
+    
+}
+/*======================== Dashboard End =======================*/
 /*======================== Footer Start =======================*/
 footer {
 	color: var(--white);

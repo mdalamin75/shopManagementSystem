@@ -27,10 +27,13 @@ include "includes/header.php";
               }
             ?>
             <!-- Button trigger modal -->
-            <button type="button" class="btn myBtn mb-5" data-bs-toggle="modal" data-bs-target="#exampleModal">
-              <i class="fa-solid fa-plus"></i>
-              Add Category
-            </button>
+            <div class="d-flex justify-content-between align-items-center mb-5">
+              <h3>Category</h3>
+              <button type="button" class="btn myBtn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <i class="fa-solid fa-plus"></i>
+                Add Category
+              </button>
+            </div>
 
             <!-- Modal Start-->
             <div class="modal fade" id="exampleModal" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -61,20 +64,21 @@ include "includes/header.php";
                 if (mysqli_num_rows($data) > 0) {
                   }
               ?>
-              <table id="category_table" class="table table-light table-striped table-bordered rounded text-center">
+              <table id="category_table" class="table table-light table-striped table-bordered rounded text-center table-hover ">
                 <thead>
                     <tr>
-                      <th>Category ID</th>
+                      <th>NO</th>
                       <th>Category Name</th>
                       <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php
+                    $i=1;
                     while ($row = mysqli_fetch_assoc($data)) { ?>
                         <tr>
                             <td class="category_id">
-                                <?php echo $row['id'] ?>
+                                <?php echo $i++ ?>
                             </td>
                             <td class="text-capitalize">
                                 <?php echo $row['category_name'] ?>
