@@ -51,7 +51,7 @@ include "includes/header.php";
                             <select name="product">
                                 <option value="">Select Product</option>
                                 <?php
-                                $query = "SELECT id, product_name FROM product_info";
+                                $query = "SELECT id, product_name FROM product_info GROUP BY product_name";
                                 $result = $conn->query($query);
                                 if ($result->num_rows > 0) {
                                     while ($optionData = $result->fetch_assoc()) {
